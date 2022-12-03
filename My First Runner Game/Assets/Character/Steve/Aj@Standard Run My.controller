@@ -37,7 +37,7 @@ AnimatorStateMachine:
   m_ChildStates:
   - serializedVersion: 1
     m_State: {fileID: -7588932232517768099}
-    m_Position: {x: 200, y: 0, z: 0}
+    m_Position: {x: 230, y: -100, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6237690264899642470}
     m_Position: {x: 485.15265, y: 36.914337, z: 0}
@@ -139,7 +139,7 @@ AnimatorState:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_Name: Backwards
-  m_Speed: 1
+  m_Speed: 1.5
   m_CycleOffset: 0
   m_Transitions: []
   m_StateMachineBehaviours: []
