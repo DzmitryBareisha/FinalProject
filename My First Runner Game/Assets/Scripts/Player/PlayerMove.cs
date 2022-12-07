@@ -4,29 +4,44 @@ using UnityEngine;
 
 public class PlayerMove : MonoBehaviour
 {
-    public float moveSpeed = 3;
+    private CharacterController cc;
+    public float moveSpeed = 5;
     public float leftRightSpeed = 4;
-    public static bool canMove = false;    
-    public float jumpForce = 3;
-    //public float gravity = -20f;       
+    public static bool canMove = true/*false*/;
+    public float jumpSpeed;
+    public float jumpForce;
+    public float gravity;    
+    void Start()
+    {
+        cc = GetComponent<CharacterController>();
+    }
     void Update()
     {
-        transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime, Space.World);
-        if (canMove == true)
+        if (cc.isGrounded)
         {
-            if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+            transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime, Space.World);
+            if (canMove == true)
             {
-                MoveLeft();
-            }
-            if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
-            {
-                MoveRight();
-            }
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                Jump();
-            }
-        }        
+                if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
+                {
+                    MoveLeft();
+                }
+                if (Input.GetKey(KeyCode.D) || Input.GetKey(KeyCode.RightArrow))
+                {
+                    MoveRight();
+                }
+                if (Input.GetKeyDown(KeyCode.Space))
+                {
+                    Jump();                    
+                }
+            }            
+        }
+        else
+        {
+            jumpSpeed += gravity * Time.deltaTime * 3f;
+            Vector3 dir = new Vector3(0, jumpSpeed * Time.deltaTime, moveSpeed * Time.deltaTime);
+            cc.Move(dir);
+        }       
     }
     void MoveLeft()
     {
@@ -44,7 +59,9 @@ public class PlayerMove : MonoBehaviour
     }
     void Jump()
     {
-        //Debug.Log("Jump");
-        //transform.position += new Vector3(0, jumpForce, 0);
+        Debug.Log("Jump");
+        jumpSpeed = jumpForce;
+        Vector3 dir = new Vector3(0, jumpSpeed * Time.deltaTime, 0);
+        cc.Move(dir);
     }    
 }

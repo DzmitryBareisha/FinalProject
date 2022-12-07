@@ -366,6 +366,7 @@
 "Assets/Scripts/Environment/ObstacleCollision.cs"
 "Assets/Scripts/MainMenu.cs"
 "Assets/Scripts/Player/PlayerMove.cs"
+"Assets/TestJump.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark01_UGUI.cs"
 "Assets/TextMesh Pro/Examples & Extras/Scripts/Benchmark02.cs"
