@@ -15351,6 +15351,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f7453fb5f1fcf4b42bf954af17dfebab, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  animModel: {fileID: 919132147530991955}
   moveSpeed: 5
   leftRightSpeed: 4
   jumpSpeed: 0
@@ -17164,19 +17165,6 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &919132147530991958
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 919132147530991955}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: db57b211bc667834195c419cbc1cebc7, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 0}
 --- !u!1001 &3913057104270687893
 PrefabInstance:
   m_ObjectHideFlags: 0

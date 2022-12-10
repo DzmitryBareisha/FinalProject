@@ -68,31 +68,28 @@ AnimatorStateMachine:
     m_Position: {x: 320, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -6237690264899642470}
-    m_Position: {x: 590, y: 30, z: 0}
-  - serializedVersion: 1
-    m_State: {fileID: -3270540193251613883}
-    m_Position: {x: 430, y: -140, z: 0}
+    m_Position: {x: 750, y: -100, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 1934065974446614438}
-    m_Position: {x: 280, y: 170, z: 0}
+    m_Position: {x: 220, y: 210, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -286349298977028165}
-    m_Position: {x: 350, y: 290, z: 0}
+    m_Position: {x: 780, y: 0, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8900045929408790799}
-    m_Position: {x: 650, y: 260, z: 0}
+    m_Position: {x: 660, y: -510, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 8546490570218283920}
-    m_Position: {x: 670, y: -90, z: 0}
+    m_Position: {x: 700, y: -410, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 7182905318875711300}
-    m_Position: {x: 600, y: 340, z: 0}
+    m_Position: {x: 750, y: -220, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 5492924924875250233}
-    m_Position: {x: 742.176, y: -167.35342, z: 0}
+    m_Position: {x: 740, y: -310, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -8825013468782220124}
-    m_Position: {x: 620, y: 140, z: 0}
+    m_Position: {x: 590, y: 210, z: 0}
   m_ChildStateMachines: []
   m_AnyStateTransitions: []
   m_EntryTransitions: []
@@ -154,32 +151,6 @@ AnimatorStateTransition:
   m_InterruptionSource: 0
   m_OrderedInterruption: 1
   m_CanTransitionToSelf: 1
---- !u!1102 &-3270540193251613883
-AnimatorState:
-  serializedVersion: 6
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_Name: Jump
-  m_Speed: 1
-  m_CycleOffset: 0
-  m_Transitions: []
-  m_StateMachineBehaviours: []
-  m_Position: {x: 50, y: 50, z: 0}
-  m_IKOnFeet: 0
-  m_WriteDefaultValues: 1
-  m_Mirror: 0
-  m_SpeedParameterActive: 0
-  m_MirrorParameterActive: 0
-  m_CycleOffsetParameterActive: 0
-  m_TimeParameterActive: 0
-  m_Motion: {fileID: 7400000, guid: 53df5a5adbe80394681966ffb0cefc89, type: 2}
-  m_Tag: 
-  m_SpeedParameter: 
-  m_MirrorParameter: 
-  m_CycleOffsetParameter: 
-  m_TimeParameter: 
 --- !u!1102 &-286349298977028165
 AnimatorState:
   serializedVersion: 6
@@ -220,13 +191,25 @@ AnimatorController:
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
   - m_Name: Run
     m_Type: 9
     m_DefaultFloat: 0
     m_DefaultInt: 0
     m_DefaultBool: 0
-    m_Controller: {fileID: 9100000}
+    m_Controller: {fileID: 0}
+  - m_Name: Left Strafe
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
+  - m_Name: Right Strafe
+    m_Type: 9
+    m_DefaultFloat: 0
+    m_DefaultInt: 0
+    m_DefaultBool: 0
+    m_Controller: {fileID: 0}
   m_AnimatorLayers:
   - serializedVersion: 5
     m_Name: Base Layer

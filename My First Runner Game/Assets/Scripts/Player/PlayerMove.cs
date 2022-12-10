@@ -5,6 +5,7 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     private CharacterController cc;
+   public GameObject animModel;
     public float moveSpeed = 5;
     public float leftRightSpeed = 4;
     public static bool canMove = true/*false*/;
@@ -13,7 +14,7 @@ public class PlayerMove : MonoBehaviour
     public float gravity;    
     void Start()
     {
-        cc = GetComponent<CharacterController>();
+        cc = GetComponent<CharacterController>();        
     }
     void Update()
     {
@@ -32,7 +33,12 @@ public class PlayerMove : MonoBehaviour
                 }
                 if (Input.GetKeyDown(KeyCode.Space))
                 {
+                    animModel.GetComponent<Animator>().SetTrigger("Jump");
                     Jump();                    
+                }
+                else
+                {
+                    animModel.GetComponent<Animator>().SetTrigger("Run");
                 }
             }            
         }
@@ -58,8 +64,7 @@ public class PlayerMove : MonoBehaviour
         }
     }
     void Jump()
-    {
-        Debug.Log("Jump");
+    {        
         jumpSpeed = jumpForce;
         Vector3 dir = new Vector3(0, jumpSpeed * Time.deltaTime, 0);
         cc.Move(dir);
