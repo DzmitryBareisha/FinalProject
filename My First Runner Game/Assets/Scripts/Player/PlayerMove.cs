@@ -5,13 +5,14 @@ using UnityEngine;
 public class PlayerMove : MonoBehaviour
 {
     private CharacterController cc;
-   public GameObject animModel;
+    public GameObject animModel;
     public float moveSpeed = 5;
     public float leftRightSpeed = 4;
-    public static bool canMove = true/*false*/;
+    public static bool canMove = false;
     public float jumpSpeed;
     public float jumpForce;
-    public float gravity;    
+    public float gravity;
+        
     void Start()
     {
         cc = GetComponent<CharacterController>();        
@@ -22,7 +23,7 @@ public class PlayerMove : MonoBehaviour
         {
             transform.Translate(Vector3.forward * moveSpeed * Time.deltaTime, Space.World);
             if (canMove == true)
-            {
+            {               
                 if (Input.GetKey(KeyCode.A) || Input.GetKey(KeyCode.LeftArrow))
                 {
                     MoveLeft();
@@ -60,7 +61,7 @@ public class PlayerMove : MonoBehaviour
     {
         if (gameObject.transform.position.x < LevelBoundary.rightSide)
         {
-            transform.Translate(-Vector3.left * leftRightSpeed * Time.deltaTime);
+            transform.Translate(Vector3.right * leftRightSpeed * Time.deltaTime);
         }
     }
     void Jump()
