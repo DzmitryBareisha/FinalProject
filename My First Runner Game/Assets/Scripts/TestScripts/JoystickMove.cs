@@ -10,14 +10,16 @@ public class JoystickMove : MonoBehaviour
     public GameObject animModel;
     public float moveSpeed = 5;
     public float leftRightSpeed = 4;
-    public static bool canMove = false;
+    public static bool canMove = true /*false*/;
     public float jumpSpeed;
     public float jumpForce;
     public float gravity;
+    public bool turn = false;
 
     void Start()
     {
         cc = GetComponent<CharacterController>();
+        StartCoroutine(AddingSpeed());
     }
     void Update()
     {
@@ -29,11 +31,28 @@ public class JoystickMove : MonoBehaviour
             {
                 if (myjoystick.Horizontal != 0)
                 {
+                    Debug.Log(myjoystick.Horizontal);
                     MoveSide();
+                    
+                    if (myjoystick.Horizontal < 0)
+                    {
+                        animModel.GetComponent<Animator>().SetBool("Left", true);
+                        animModel.GetComponent<Animator>().SetBool("Right", false);
+                        turn = true;
+                    }
+                    if (myjoystick.Horizontal > 0)
+                    {                        
+                        animModel.GetComponent<Animator>().SetBool("Right", true);
+                        animModel.GetComponent<Animator>().SetBool("Left", false);
+                        turn = true;
+                    }    
                 }                
                 else
                 {
-                    animModel.GetComponent<Animator>().SetTrigger("Run");
+                    turn = false;
+                    animModel.GetComponent<Animator>().SetBool("Right", false);
+                    animModel.GetComponent<Animator>().SetBool("Left", false);
+                    animModel.GetComponent<Animator>().SetTrigger("Run");                    
                 }               
             }
         }
@@ -52,12 +71,18 @@ public class JoystickMove : MonoBehaviour
 
     public void Jump()
     {
-        if (cc.isGrounded)
+        if (cc.isGrounded && !turn)
         {
             animModel.GetComponent<Animator>().SetTrigger("Jump");
             jumpSpeed = jumpForce;
             Vector3 dir = new Vector3(0, jumpSpeed * Time.deltaTime, 0);
             cc.Move(dir);
         }            
+    }
+    IEnumerator AddingSpeed()
+    {
+        yield return new WaitForSeconds(10);
+        moveSpeed += 1;
+        StartCoroutine(AddingSpeed());
     }
 }
