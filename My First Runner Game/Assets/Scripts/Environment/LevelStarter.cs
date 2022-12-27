@@ -30,5 +30,6 @@ public class LevelStarter : MonoBehaviour
         countDownGo.SetActive(true);
         goFX.Play();
         PlayerMove.canMove = true;
+        JoystickMove.canMove = true;
     }
 }

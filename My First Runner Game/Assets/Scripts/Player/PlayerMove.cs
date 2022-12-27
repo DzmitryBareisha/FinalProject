@@ -9,7 +9,7 @@ public class PlayerMove : MonoBehaviour
     public GameObject animModel;
     public float moveSpeed = 5;
     public float leftRightSpeed = 4;
-    public static bool canMove = true /*false*/;
+    public static bool canMove = false;
     public float jumpSpeed;
     public float jumpForce;
     public float gravity;
