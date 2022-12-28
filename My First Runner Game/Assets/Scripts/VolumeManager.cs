@@ -40,10 +40,6 @@ public class VolumeManager : MonoBehaviour
     }
     public void UpdateSound()
     {
-        musicAudio.volume = musicSlider.value;
-        //for (int i = 0; i < musicAudio.Length; i++)
-        //{
-        //    musicAudio[i].volume = musicSlider.value;
-        //}        
+        musicAudio.volume = musicSlider.value;        
     }
 }
